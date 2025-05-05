@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: configuration-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Kvanzi/spring-microservices-auction-configurations.git
+          default-label: main # default git branch to use for configuration files
+          search-paths: "{application}"
+          clone-on-start: true
+      fail-fast: true # fails startup if config Server cannot retrieve configuration from git
+
+server:
+  port: 8888
